@@ -2,4 +2,125 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-size: 12px;
+}
+body {
+    background-color: #f5f5eb;
+    font-family: 'Inter', sans-serif;
+}
+h1 {
+    font-size: 3em;
+}
+.main {
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    margin-top: 10px;
+}
+.accordion {
+    margin-top: 1rem;
+    width: 40vw;
+    color: steelblue;
+}
+.accordion:hover {
+    color: #26282b;
+}
+.section-item label {
+    position: relative;
+    font-size: 1rem;
+    line-height: 1rem;
+    font-weight: 600;
+    padding: 1em 0 1em 0;
+    display: flex;
+    flex-direction: column;
+    border-top: .1em solid #e4e7e7;
+    cursor: pointer;
+    transition: all .2s ease-in-out;
+}
+.title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.section-item label span:last-child {
+    font-size: 2rem;
+}
+.section-item label span:first-child {
+    font-size: 1.3rem;
+}
+.section-item label .title span:last-child {
+    transition: all .2s ease-in-out;
+}
+.section-item input:checked ~ label .title span:last-child {
+    transform: rotate(45deg);
+}
+.section-item:hover label .title span:last-child {
+    transform: rotate(45deg);
+}
+.section-item input:checked ~ label .panel img {
+    scale: 1;
+    opacity: 1;
+}
+.section-item:hover label img.img-anim {
+    scale: 1;
+    opacity: 1;
+    transition: all .3s ease-in;
+}
+img.img-anim {
+    scale: 0;
+    opacity: 0;
+    transition: all .3s ease-in;
+}
+.panel {
+    margin: 2em 0 2em;
+}
+.panel img {
+    margin: 0 auto;
+    display: block;
+}
+.section-item:hover label {
+    border-bottom: none;
+}
+.section-item:hover .panel {
+    display: block;
+    cursor: pointer;
+}
+.section-item input:checked ~ label .panel{
+    display: block;
+}
+.section-item input {
+    display: none;
+}
+.section-item .panel {
+    display: none;
+}
+
+@media screen and (max-width: 820px) {
+    .accordion {
+        width: 60vw;
+    }
+    * {
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 770px) {
+    .accordion {
+        width: 90vw;
+    }
+}
+@media screen and (max-width: 520px) {
+    * {
+        font-size: 16px;
+    }
+}
+@media screen and (max-width: 405px) {
+    * {
+        font-size: 12px;
+    }
+}
+@media screen and (max-width: 320px) {
+    img.img-anim {
+        width: 75%;
+    }
 }
